@@ -1,7 +1,7 @@
 import React from "react";
 import { Toast } from "antd-mobile";
 import { authenticateSuccess } from "../utils/session";
-import { authInfo } from "../services/service";
+import { authInfo,register } from "../services/service";
 import { createHashHistory } from "history";
 const URI = require("urijs");
 class midPage extends React.Component {
@@ -10,18 +10,27 @@ class midPage extends React.Component {
     this.state = {};
   }
   componentWillMount() {
-    authenticateSuccess(JSON.stringify({openid:'oTTHX5bfV2EQRtT4wtm_dh-LN844'}));
     var url = window.location.href;
     const code = this.pasreCode();
     if (code) {
       authInfo({ code: code, appid: "wxa8980d28e4a9d7a2" }).then(data => {
-        if (data.openid) {
+        if (data.data&&data.data.openid) {
           const cookies = {
-            openid: data.openid,
-            unionid: data.unionid
+            openid: data.data.openid,
+            unionid: data.data.unionid
           };
-          authenticateSuccess(JSON.stringify(cookies));
-          createHashHistory().replace('/');
+          var nickName="";
+          for(var i=0;i<4;i++){
+            nickName+=Math.floor(Math.random()*10)
+          }
+          register({openid:data.data.openid,unionid:data.data.unionid,nickname:nickName}).then(data=>{
+            if(data.data) {
+              authenticateSuccess(JSON.stringify(cookies));
+              createHashHistory().replace('/');
+            } else {
+              Toast.info('登陆失败');
+            }
+          })
         } else {
           Toast.info(data.errmsg);
         }

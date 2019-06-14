@@ -23,6 +23,10 @@ export const userInfo = params => {
   return axios.get("/uc/api/testUser/getTestUser", { params: params });
 };
 
+export const  register = params =>{
+  return axios.post("/uc/api/user/register",  params );
+}
+
 export const getUsers = (params) =>{
   return axios.get('/uc/api/testUser/list',{params:params});
 }
