@@ -4,8 +4,12 @@ import { isAuthenticated } from '../utils/session'
 
 export const PrivateRoute = ({component: Component, ...rest}) => (
   <Route {...rest} render={(props) => (
-      <Component {...props} />
-      
+    !!isAuthenticated()
+      ? <Component {...props} />
+      : <Redirect to={{
+        pathname: '/oauth',
+        state: {from: props.location}
+      }}/>
   )}/>
 )
 

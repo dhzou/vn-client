@@ -5,7 +5,6 @@ import styles from "../assets/css/home.less";
 import { isAuthenticated, authenticateSuccess } from "../utils/session";
 import { createHashHistory } from "history";
 const Item = List.Item;
-const Brief = Item.Brief;
 class homePage extends React.Component {
   constructor(props) {
     super(props);
@@ -14,22 +13,17 @@ class homePage extends React.Component {
     };
   }
   componentDidMount() {
-    // const cookies = isAuthenticated();
-    // if (cookies) {
-    //   const userInfo = JSON.parse(cookies);
-    //   this.setState({
-    //     userName: userInfo.username,
-    //     password: userInfo.password
-    //   });
-    // }
-
-    getUsers({ openid: "oTTHX5bfV2EQRtT4wtm_dh-LN844" }).then(data => {
-      if (data.data.status === 0) {
-        this.setState({ users: data.data.data.content });
-      } else {
-        Toast.info(data.data.message);
-      }
-    });
+    const cookies = isAuthenticated();
+    if (cookies) {
+      const cookiesInfo = JSON.parse(cookies);
+      getUsers({ openid: cookiesInfo.openid }).then(data => {
+        if (data.data.status === 0) {
+          this.setState({ users: data.data.data.content });
+        } else {
+          Toast.info(data.data.message);
+        }
+      });
+    }
   }
 
   handleItemClick = item => {

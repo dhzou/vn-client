@@ -4,12 +4,16 @@ import { Route,Switch,HashRouter} from 'react-router-dom';
 import Home from '../routes/homePage';
 import Result from '../routes/resultPage';
 import NewPage from '../routes/newPage';
+import MidPage from '../routes/midloginPage';
+import ResultDetail from '../routes/resultDetail'
 const Root = () => (
     <HashRouter >
       <Switch>
-        <Route path="/" exact component={Home}/>
-        <Route path="/new" exact component={NewPage}/>
+        <PrivateRoute path="/" exact component={Home}/>
+        <PrivateRoute path="/new" exact component={NewPage}/>
+        <Route path="/oauth" exact component={MidPage} />
         <PrivateRoute path="/result/:id" exact component={Result}/>
+        <PrivateRoute path="/result/detail/:id" exact component={ResultDetail}/>
       </Switch>
       </HashRouter>
 );

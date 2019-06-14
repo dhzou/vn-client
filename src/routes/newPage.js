@@ -3,9 +3,7 @@ import { List, Button, NavBar, Toast, DatePicker, Flex } from "antd-mobile";
 import { insertUser } from "../services/service";
 import styles from "../assets/css/home.less";
 import { createHashHistory } from 'history';
-import { isAuthenticated, authenticateSuccess } from "../utils/session";
-const Item = List.Item;
-const Brief = Item.Brief;
+import { isAuthenticated } from "../utils/session";
 class newPage extends React.Component {
   constructor(props) {
     super(props);
@@ -15,22 +13,28 @@ class newPage extends React.Component {
       date: ""
     };
   }
-  componentDidMount() {}
+  componentDidMount() {
+    const cookies = isAuthenticated();
+    if (cookies) {
+      const cookiesInfo = JSON.parse(cookies);
+      this.openid =  cookiesInfo.openid;
+    }
+  }
 
   handleClick = () => {
     if (!this.state.testName || !this.state.gender || !this.state.date) {
       Toast.info("请填写必要信息");
     } else {
-      var age = Math.floor(
+      const age = Math.floor(
         (new Date() - this.state.date) / 1000 / 60 / 60 / 24 / 365
       );
       insertUser({
         testName: this.state.testName,
         gender: this.state.gender,
-        birthday: '1995-10-01',
+        birthday: this.state.date,
         type: "WX",
-        openid: "oTTHX5bfV2EQRtT4wtm_dh-LN844",
-        age: 25
+        openid:  this.openid,
+        age: age
       }).then(data => {
         if(data.data.status === 0) {
           Toast.info('创建成功');
@@ -116,6 +120,8 @@ class newPage extends React.Component {
           }}
         >
           <DatePicker
+            minDate= {new Date('1900-1-1')}
+            maxDate={new Date('2020-1-1')}
             width="300px"
             mode="date"
             extra="请选择"

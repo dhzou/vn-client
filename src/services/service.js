@@ -16,7 +16,7 @@ export const search = (params)=>{
 }
 
 export const authInfo = (params) =>{
-  return axios.get('/wxSigns/wx/Oauth',{params:params});
+  return axios.get('http://api.personalhealth.com.cn/wxSigns/wx/Oauth',{params:params});
 }
 
 export const userInfo = params => {

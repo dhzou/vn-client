@@ -66,7 +66,7 @@ class resultPage extends React.Component {
           测试结果
         </NavBar>
         <div style={{ marginTop: 20 }}>
-          {this.state.userInfo ? (
+          {this.state.userInfo &&(
             <div
               style={{
                 background: "linear-gradient(90deg,#bfe885,#98e07e)",
@@ -87,19 +87,7 @@ class resultPage extends React.Component {
                 <p style={{ fontSize: "18px" }}>编号：{this.state.userInfo.testUserCode}</p>
               </div>
             </div>
-          ) : (
-            <div
-              style={{
-                height: 90,
-                lineHeight: "90px",
-                textAlign: "center",
-                background: "linear-gradient(90deg,#bfe885,#98e07e)",
-                color: "#fff"
-              }}
-            >
-              暂无该用户
-            </div>
-          )}
+          ) }
           { (this.state.productData && this.state.productData.length !==0)?
             this.state.productData.map((item, index) => {
               return (
