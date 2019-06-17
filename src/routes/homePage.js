@@ -5,6 +5,12 @@ import styles from "../assets/css/home.less";
 import { isAuthenticated, authenticateSuccess } from "../utils/session";
 import { createHashHistory } from "history";
 const Item = List.Item;
+
+const gender ={
+  '男':'https://img.soulapp.cn/heads/avatar-1560609313500-06824.png',
+  '女':'https://img.soulapp.cn/heads/1559898451854.png'
+}
+
 class homePage extends React.Component {
   constructor(props) {
     super(props);
@@ -69,7 +75,7 @@ class homePage extends React.Component {
                       <img
                         style={{ width: 60, height: 60, borderRadius: 30 }}
                         alt=""
-                        src="https://img.soulapp.cn/heads/1559898451854.png"
+                        src= {gender[item.gender]}
                       />
                       <div style={{ marginLeft: 20 }}>
                         <p style={{ fontSize: 14, color: "#cccccc" }}>
