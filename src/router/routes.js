@@ -13,7 +13,7 @@ const Root = () => (
         <PrivateRoute path="/new" exact component={NewPage}/>
         <Route path="/oauth" exact component={MidPage} />
         <PrivateRoute path="/result/:id" exact component={Result}/>
-        <PrivateRoute path="/result/detail/:id" exact component={ResultDetail}/>
+        <PrivateRoute path="/result/user/:userId/detail/:id" exact component={ResultDetail}/>
       </Switch>
       </HashRouter>
 );

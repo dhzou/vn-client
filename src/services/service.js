@@ -33,3 +33,8 @@ export const getUsers = (params) =>{
 export const insertUser = (params)=>{
   return axios.post("/uc/api/testUser/testUser",params);
 }
+
+export const getDetail =(params) =>{
+  console.log('params',JSON.stringify(params))
+  return axios.get("/uc/api/dataResult/getIdea",{params:params});
+}

@@ -22,9 +22,8 @@ class resultPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInfo:'',
       productData: [],
-      userInfo: ""
+      userInfo: {}
     };
   }
 
@@ -51,9 +50,8 @@ class resultPage extends React.Component {
     createHashHistory().goBack();
   };
 
-  handClick = index => {
-    alert(index)
-    // this.props.dispatch(routerRedux.push("/detail"));
+  handClick = id => {
+    createHashHistory().push({pathname:`user/${this.userId}/detail/${id}`});
   };
   render() {
     return (
@@ -100,7 +98,7 @@ class resultPage extends React.Component {
                   }}
                 >
                   <div
-                  onClick={()=>{this.handClick(index)}}
+                  onClick={()=>{this.handClick(item.id)}}
                     style={{
                       display: "flex",
                       alignItems: "center",
