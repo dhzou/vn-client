@@ -14,6 +14,7 @@ class newPage extends React.Component {
     };
   }
   componentDidMount() {
+    document.title='创建用户';
     const cookies = isAuthenticated();
     if (cookies) {
       const cookiesInfo = JSON.parse(cookies);
@@ -48,7 +49,7 @@ class newPage extends React.Component {
   render() {
     return (
       <div className={styles["animate-route"]} style={{ background: " white" }}>
-        <NavBar mode="dark">创建用户</NavBar>
+        {/* <NavBar mode="dark">创建用户</NavBar> */}
         <div style={{ textAlign: "center", marginTop: 30, fontSize: "20px" }}>
           你的姓名
         </div>

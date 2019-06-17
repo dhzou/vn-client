@@ -28,6 +28,7 @@ class resultPage extends React.Component {
   }
 
   componentDidMount() {
+    document.title='检查结果'
     this.userId = this.props.match.params.id;
     userInfo({testUserCode:this.userId}).then(data=>{
       if (data.data.status ===0){
@@ -56,13 +57,13 @@ class resultPage extends React.Component {
   render() {
     return (
       <div>
-        <NavBar
+        {/* <NavBar
           mode="dark"
           icon={<Icon type="left" />}
           onLeftClick={this.goBack}
         >
           测试结果
-        </NavBar>
+        </NavBar> */}
         <div style={{ marginTop: 20 }}>
           {this.state.userInfo &&(
             <div

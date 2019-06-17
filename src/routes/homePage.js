@@ -13,6 +13,7 @@ class homePage extends React.Component {
     };
   }
   componentDidMount() {
+    document.title='用户列表';
     const cookies = isAuthenticated();
     if (cookies) {
       const cookiesInfo = JSON.parse(cookies);
@@ -36,7 +37,7 @@ class homePage extends React.Component {
   render() {
     return (
       <div className={styles["animate-route"]}>
-        <NavBar mode="dark">用户列表</NavBar>
+        {/* <NavBar mode="dark">用户列表</NavBar> */}
         <div style={{ marginTop: 16 }} className="my-list">
           <List>
             {this.state.users.length === 0 && (
