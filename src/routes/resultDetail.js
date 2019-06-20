@@ -137,6 +137,37 @@ class resultPage extends React.Component {
             {this.state.productData && this.state.productData.idea}
           </p>
         </div>
+
+
+
+        <div
+          style={{
+            background: "#FFFFFF",
+            padding: "0 20px",
+            borderTop: "1px solid #ECEFF1",
+            borderBottom: "1px solid #ECEFF1"
+          }}
+        >
+          <p
+            style={{
+              fontSize: "16px",
+              fontWeight: "bold",
+              color: "#27374D"
+            }}
+          >
+            项目简介
+          </p>
+          <p
+            style={{
+              whiteSpace: "pre-line",
+              margin: "0 0 10px",
+              fontSize: 16,
+              lineHeight: "22px"
+            }}
+          >
+            {this.state.productData && this.state.productData.idea}
+          </p>
+        </div>
       </div>
     );
   }
