@@ -120,8 +120,11 @@ class resultPage extends React.Component {
                   <List className="my-list">
                     {item.dataProductIndices &&
                       item.dataProductIndices.map(sub => {
+                        const value =
+                        (sub.value ? sub.value : 0) +
+                        (sub.unit ? sub.unit : "");
                         return (
-                          <Item key={sub.id} extra={sub.value + sub.unit}>
+                          <Item key={sub.id} extra={value}>
                             {sub.name}
                           </Item>
                         );

@@ -78,7 +78,7 @@ class resultPage extends React.Component {
                 color: "#27374D"
               }}
             >
-              我的基因检测结果
+              我的XXX结果
             </h2>
           </div>
           <div style={{ textAlign: "center" }}>
@@ -92,7 +92,7 @@ class resultPage extends React.Component {
                 fontSize: "16px"
               }}
             >
-              <p style={{ margin: "0 0 10px" }}>我的咖啡因敏感性</p>
+              <p style={{ margin: "0 0 10px" }}>我的XXX</p>
               <div style={{ marginTop: 20, fontSize: 28 }}>
                 <b
                   style={{
@@ -106,7 +106,6 @@ class resultPage extends React.Component {
                 </b>
               </div>
             </div>
-            <div style={{ marginTop: 15 }}>您的代谢比75%高</div>
           </div>
         </div>
 

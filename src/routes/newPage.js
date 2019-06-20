@@ -50,7 +50,7 @@ class newPage extends React.Component {
     return (
       <div className={styles["animate-route"]} style={{ background: " white" }}>
         {/* <NavBar mode="dark">创建用户</NavBar> */}
-        <div style={{ textAlign: "center", marginTop: 30, fontSize: "20px" }}>
+        <div style={{ textAlign: "center",fontSize: "20px" }}>
           你的姓名
         </div>
         <div>
