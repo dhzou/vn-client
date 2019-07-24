@@ -83,7 +83,13 @@ class resultPage extends React.Component {
                 <p style={{ marginTop: 5 }}>{this.state.userInfo.gender} {this.state.userInfo.age}岁</p>
               </div>
               <div>
-                <p style={{ fontSize: "18px" }}>编号：{this.state.userInfo.testUserCode}</p>
+                <p style={{ fontSize: "18px",textAlign: 'right' }}>编号：{this.state.userInfo.testUserCode}</p>
+                <div>
+                <div style={{width:40,height:40,display:'inline-block', backgroundImage:"url("+require("../assets/images/rank.png")+")",backgroundSize: 'contain'}} >
+                  <p style={{textAlign:'center'}}>20</p>
+                  </div>
+                <p style={{ marginLeft:20,color:'#E5271C',fontSize: "14px",display:'inline-block' }}>综合排名：20</p>
+                </div>
               </div>
             </div>
           ) }

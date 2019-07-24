@@ -1,7 +1,7 @@
 import React from "react";
 import { Toast } from "antd-mobile";
 import { getDetail } from "../services/service";
-
+import Star from "../components/start";
 class resultPage extends React.Component {
   constructor(props) {
     super(props);
@@ -51,6 +51,10 @@ class resultPage extends React.Component {
             我的检测结果
           </p>
         </div>
+        <div style={{height:40,textAlign:'center',fontSize:20,marginTop:20}}>
+           <Star star={4} /> 
+        </div>
+    
 
         <div
           style={{

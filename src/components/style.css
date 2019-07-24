@@ -1,0 +1,28 @@
+.star{
+    display: inline-block;
+  }
+  .star>span{
+      display: inline-block;
+      background-size: 30px 30px;
+  }
+  .star0{
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(img/star0.png);
+  }
+  .star1{
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(img/star1.png);
+  }
+  .star2{
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(img/star2.png);
+  }
