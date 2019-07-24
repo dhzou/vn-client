@@ -53,6 +53,7 @@ class resultPage extends React.Component {
         </div>
         <div style={{height:40,textAlign:'center',fontSize:20,marginTop:20}}>
            <Star star={4} /> 
+           <p style={{textAlign:'center',paddingTop:10,paddingBottom:10,color:'#E5271C',fontSize: "14px"}}>优秀</p>
         </div>
     
 
